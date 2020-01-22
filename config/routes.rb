@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  # When the user is signed in, route them to the Shoutr dashboard
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: "dashboards#show", as: :signed_in_root
+  end
+
   root to: "homes#show"
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, only: [:create]
