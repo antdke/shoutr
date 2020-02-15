@@ -1,5 +1,5 @@
 <div>
-    <%= image_tag "//www.gravatar.com/avatar/#{Digest::MD5.hexdigest(shout.user.email)}"%>
+    <%= gravatar(shout.user) %>
     <%= link_to shout.username, shout.user%>
     <%= render shout.content %>
     <%= link_to shout do %>
