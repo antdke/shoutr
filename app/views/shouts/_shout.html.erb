@@ -1,11 +1,12 @@
 <div>
-    <%= gravatar(shout.user) %>
+    <%= avatar(shout.user) %>
     <%= link_to shout.username, shout.user%>
     <%= render shout.content %>
     <%= link_to shout do %>
       <%= "-- " + time_ago_in_words(shout.created_at) %> ago
     <% end %>
-    <%= link_to "Like", like_shout_path(shout), method: :post %>
+
+    <%= like_button(shout) %>
   </div>
 
  
